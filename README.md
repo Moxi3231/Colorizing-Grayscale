@@ -31,10 +31,37 @@ Computer Vision presents an intriguing challenge of coloring grayscale images. R
 
 Once all the requirements are satisfied run the cell of the notebook.
 
+
+### Training the model
+> wpath = './path/to/saved/weights'
+
+> learning_rate_fn_1 = tf.keras.optimizers.schedules.PolynomialDecay(1e-03,128*8*100*10000, 1e-012, power=0.95)
+
+>learning_rate_fn_2 = tf.keras.optimizers.schedules.PolynomialDecay(1e-05,128*9*100*10000, 1e-013, power=0.95)
+
+
+> G_opt = tf.optimizers.Adam(learning_rate=learning_rate_fn_1,beta_1=0.5,beta_2=0.95, clipnorm=1.0, epsilon=1e-09,amsgrad=True)
+
+> D_opt = tf.optimizers.Adam(learning_rate=learning_rate_fn_2,beta_1=0.5,beta_2=0.95, clipnorm=1.0, epsilon=1e-09,amsgrad=True)
+
+> gan_model = GAN(img_shape,G_opt,D_opt,weight_path=wpath,load_wei=False)
+
+Note: While creating model for first if weights aren't there then load_wei should be False
+
+### Loading the  model from saved weights
+> gan_model = GAN(img_shape,G_opt,D_opt,weight_path=wpath,load_wei=True)
+
+
 #### Colorizing an image
 1. Load the model from saved weights
 2. Load the image
 3. From the model call the function colorizeImg
+
+> img = cv2.imread('./path/to/image')
+
+> imgs = np.asarray([img])
+
+> output = gan_model.colorizeImg(imgs)
 
 Note: The input image should be normalized in range of [-1,1]. Also image is passed as an array of image
 
