@@ -50,7 +50,7 @@ Once all the requirements are satisfied run the cell of the notebook.
 
 > train_model(gan_model,epochs = 1,train_data,save_data = True)
 ----
-Note: While creating model for first if weights aren't there then load_wei should be False
+Note: While creating model for first time if weights aren't there then load_wei should be False
 
 --------
 
