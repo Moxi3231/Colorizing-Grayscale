@@ -46,13 +46,19 @@ Once all the requirements are satisfied run the cell of the notebook.
 
 > gan_model = GAN(img_shape,G_opt,D_opt,weight_path=wpath,load_wei=False)
 
+#### Training the model
+
+> train_model(gan_model,epochs = 1,train_data,save_data = True)
+----
 Note: While creating model for first if weights aren't there then load_wei should be False
+
+--------
 
 ### Loading the  model from saved weights
 > gan_model = GAN(img_shape,G_opt,D_opt,weight_path=wpath,load_wei=True)
 
 
-#### Colorizing an image
+### Colorizing an image
 1. Load the model from saved weights
 2. Load the image
 3. From the model call the function colorizeImg
@@ -65,6 +71,14 @@ Note: While creating model for first if weights aren't there then load_wei shoul
 
 Note: The input image should be normalized in range of [-1,1]. Also image is passed as an array of image
 
+----
+
+### 
+
+![plot](./img1.png)
+![plot](./img2.png)
+![plot](./img3.png)
+![plot](./img4.png)
 ### References
 
 [1]. I. Žeger, S. Grgic, J. Vuković, and G. Šišul, "Grayscale Image Colorization Methods: Overview and Evaluation," in IEEE Access, vol. 9, pp. 113326-113346, 2021, doi: 10.1109/ACCESS.2021.3104515.
