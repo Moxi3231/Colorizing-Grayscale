@@ -3,6 +3,9 @@
 ## CMPE 258 - Deep Learning
 ## Dr. Harry Li
 
+----
+#### GitHub Link: https://github.com/Moxi3231/Colorizing-Grayscale
+
 ---
 ### Members:
 1. Moxank Patel
